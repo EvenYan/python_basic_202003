@@ -3,9 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>企业通讯录</title>
 </head>
 <body>
-    <p style="color: red;">你好，欢迎来到Django的世界！</p>
+    <h1>联系人列表</h1>
+
+    {% for people in people_list %}
+        <li><a href="/detail/{{ people.id }}">{{ people.name }}</a></li>
+    {% endfor %}
 </body>
 </html>
