@@ -25,6 +25,12 @@ def register(request):
 
 
 def deal_register(request):
+    from contact.tools import gen_secret
     username = request.POST.get("username")
-    print(username)
+    passwd = request.POST.get("passwd")
+    passwd = gen_secret(passwd)
+    phone_num = request.POST.get("phone_num")
+    
+    PeopleInfo.objects.create(name=username, passwd=passwd, phone_num=phone_num)
+
     return HttpResponse("%s注册成功" %username)
