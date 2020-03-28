@@ -18,3 +18,13 @@ def detail(request, id):
     p = PeopleInfo.objects.get(id=id)
     context = {"people": p}
     return render(request, "contact/detail.html", context=context)
+
+
+def register(request):
+    return render(request, "contact/register.html")
+
+
+def deal_register(request):
+    username = request.POST.get("username")
+    print(username)
+    return HttpResponse("%s注册成功" %username)

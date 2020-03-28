@@ -23,4 +23,6 @@ urlpatterns = [
     url(r'^$', index),
     url(r'^home/$', home),
     url(r'^detail/(\d+)$', detail),
+    url(r'^register/$', register),
+    url(r'^deal_register/$', deal_register),
 ]
